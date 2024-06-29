@@ -37,7 +37,7 @@ public class ForgotPasswordTest {
     }
 
     public String setInvalidEmailAdress() {
-       String InvalidEmail= InvalidEmailAdress.getText();
-       return InvalidEmail;
+        String InvalidEmail = InvalidEmailAdress.getText();
+        return InvalidEmail;
     }
 }
