@@ -37,13 +37,13 @@ public class TestActiveLinks {
         ot.setTxtVerify();
         Thread.sleep(3000);
         String actualmessage = ot.setSuccessfulToast();
-
         String expectedmessage = "OTP Verified successfully";
-
         Assert.assertEquals(expectedmessage, actualmessage);
         Thread.sleep(5000);
         ActiveLinks ac = new ActiveLinks(driver);
-
-        ac.activeLinks();
+        Thread.sleep(5000);
+        ac.activeLinkLeftMenu();
+        Thread.sleep(5000);
+        ac.activeLinkMasterFiles();
     }
 }
