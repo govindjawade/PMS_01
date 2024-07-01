@@ -44,6 +44,7 @@ public class TestActiveLinks {
         Thread.sleep(5000);
         //provide all active links in left menu
         ActiveLinks ac = new ActiveLinks(driver);
+        
         ac.activeLinks();
     }
 }
