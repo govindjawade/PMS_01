@@ -42,7 +42,6 @@ public class TestActiveLinks {
 
         Assert.assertEquals(expectedmessage, actualmessage);
         Thread.sleep(5000);
-        //provide all active links in left menu
         ActiveLinks ac = new ActiveLinks(driver);
 
         ac.activeLinks();
