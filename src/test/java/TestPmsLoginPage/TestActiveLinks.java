@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class TestActiveLinks  {
+public class TestActiveLinks {
     public WebDriver driver;
 
     @Test
@@ -42,9 +42,8 @@ public class TestActiveLinks  {
 
         Assert.assertEquals(expectedmessage, actualmessage);
         Thread.sleep(5000);
-        ActiveLinks ac=new ActiveLinks(driver);
+        //provide all active links in left menu
+        ActiveLinks ac = new ActiveLinks(driver);
         ac.activeLinks();
-
-
     }
 }
