@@ -23,7 +23,7 @@ public class ActiveLinks {
 
     public void activeLinkLeftMenu() {
 
-        List<WebElement> MenuLinks = driver.findElements(By.xpath("//a[contains(@class,'nav-link')]"));
+        List<WebElement> MenuLinks = driver.findElements(By.xpath("//a/span[contains(@class,'nav-text')]"));
         System.out.println("ActiveLinksInLeftMenu ---------->>>: " + MenuLinks.size());
         for (WebElement menuLink : MenuLinks) {
             System.out.println(menuLink.getText());
