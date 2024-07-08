@@ -19,7 +19,7 @@ public class TestActiveLinks {
 
         LoginTest lg = new LoginTest(driver);
         lg.setTxtUsername("raj@yopmail.com");
-        lg.setTxtpassword("Admin@123");
+        lg.setTxtpassword("Admin@321");
         Thread.sleep(3000);
 
         lg.Loginbuttonclick();
@@ -45,5 +45,7 @@ public class TestActiveLinks {
         ac.activeLinkLeftMenu();
         Thread.sleep(5000);
         ac.activeLinkMasterFiles();
+        Thread.sleep(5000);
+        ac.activeLinkEntitySetFiles();
     }
 }
