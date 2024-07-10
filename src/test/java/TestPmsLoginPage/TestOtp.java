@@ -67,9 +67,7 @@ public class TestOtp {
         ot1.setTxtVerify();
         Thread.sleep(3000);
         String actual = ot1.setInvalidOtpToast();
-
         String excepted = "OTP is invalid";
-
         Assert.assertEquals(excepted, actual);
     }
 }
