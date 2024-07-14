@@ -16,8 +16,6 @@ public class OtpTest {
 
     @FindBy(xpath = "//div[@class='recaptcha-checkbox-border']")
     WebElement checkbox;
-
-
     @FindBy(tagName = "button")
     WebElement txtVerify;
 
