@@ -69,7 +69,7 @@ public class TestLogin {
         Thread.sleep(3000);
 
         String Excepted="User detail does not exists in system";
-        String actual=lg.getToastmessageinvaliduser();
+        String actual=lg.getToastmessage();
         Thread.sleep(4000);
 
         Assert.assertEquals(Excepted.trim(),actual.trim());

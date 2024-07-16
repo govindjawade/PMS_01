@@ -10,6 +10,7 @@ import java.util.List;
 
 public class ActiveLinks {
     public WebDriver driver;
+
     @FindBy(xpath = "//ul/li/a[contains(.,'Manage Global Master Files')]")
     WebElement globalmasterfiles;
 
@@ -22,21 +23,19 @@ public class ActiveLinks {
     }
 
     public void activeLinkLeftMenu() {
-
         List<WebElement> MenuLinks = driver.findElements(By.xpath("//a/span[contains(@class,'nav-text')]"));
         System.out.println("ActiveLinksInLeftMenu ---------->>>: " + MenuLinks.size());
         for (WebElement menuLink : MenuLinks) {
             System.out.println(menuLink.getText());
         }
-
     }
 
     public void activeLinkMasterFiles() throws InterruptedException {
-        Thread.sleep(4000);
+        Thread.sleep(5000);
         globalmasterfiles.click();
         Thread.sleep(4000);
         List<WebElement> MastersLink = driver.findElements(By.xpath("//ul/li/a[contains(@href,'manage-global-master-files')]"));
-        System.out.println("ActiveLinksInGlobalMastreFiles ----------->>>: " + MastersLink.size());
+        System.out.println("ActiveLinksInGlobalMasterFiles ----------->>>: " + MastersLink.size());
         for (int i = 0; i < MastersLink.size(); i++) {
             System.out.println(MastersLink.get(i).getText());
         }

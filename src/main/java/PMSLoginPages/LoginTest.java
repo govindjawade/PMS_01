@@ -1,12 +1,17 @@
 package PMSLoginPages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class LoginTest {
-
+    public WebDriver driver;
 
     @FindBy(name = "usename")
     WebElement textusername;
@@ -14,22 +19,18 @@ public class LoginTest {
     @FindBy(name = "password")
     WebElement textpassword;
 
-    @FindBy(tagName = "button")
+    @FindBy(xpath = "//button[@type='submit']")
     WebElement loginbutton;
 
     @FindBy(xpath = "//a[normalize-space()='Forgot Password?']")
     WebElement linkforgotpassword;
 
-
     //toast message invalid creds
     @FindBy(css = "#toast-container")
     WebElement ErrorMessage;
 
-    //toast message invalid user
-    @FindBy(css = "#toast-container")
-    WebElement toastMessage;
-
     public LoginTest(WebDriver driver) {
+        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
@@ -42,6 +43,8 @@ public class LoginTest {
     }
 
     public void Loginbuttonclick() {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("ngx-overlay")));
         loginbutton.click();
     }
 
@@ -50,12 +53,6 @@ public class LoginTest {
     }
 
     public String getToastmessage() {
-        String toastMessage = ErrorMessage.getText();
-        return toastMessage;
-    }
-
-    public String getToastmessageinvaliduser() {
-        String message = toastMessage.getText();
-        return message;
+        return ErrorMessage.getText();
     }
 }

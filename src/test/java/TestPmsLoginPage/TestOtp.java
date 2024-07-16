@@ -10,6 +10,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import java.sql.Driver;
+import java.time.Duration;
 
 public class TestOtp {
     public WebDriver driver;
@@ -19,12 +20,14 @@ public class TestOtp {
 
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
+
         driver.get("https://pms.hplbusiness.com/login");
 
         LoginTest lg = new LoginTest(driver);
         lg.setTxtUsername("raj@yopmail.com");
-        lg.setTxtpassword("Admin@123");
-        Thread.sleep(3000);
+        lg.setTxtpassword("Admin@321");
+
 
         lg.Loginbuttonclick();
 
