@@ -22,7 +22,7 @@ public class LoginTest {
     @FindBy(xpath = "//button[@type='submit']")
     WebElement loginbutton;
 
-    @FindBy(xpath = "//a[normalize-space()='Forgot Password?']")
+    @FindBy(xpath = "//a[contains(text(),' Forgot Password? ')]")
     WebElement linkforgotpassword;
 
     //toast message invalid creds
@@ -49,7 +49,7 @@ public class LoginTest {
     }
 
     public void setLinkforgotpassword() {
-        linkforgotpassword.click();
+         linkforgotpassword.click();
     }
 
     public String getToastmessage() {

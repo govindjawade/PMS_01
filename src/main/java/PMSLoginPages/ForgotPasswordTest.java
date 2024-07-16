@@ -14,7 +14,7 @@ public class ForgotPasswordTest {
     WebElement SendInstrButton;
 
     @FindBy(id = "toast-container")
-    WebElement AccountLocked;
+    WebElement resetEmailLink;
 
     @FindBy(xpath = "//div[contains(text(),'Email address pattern is invalid.')]")
     WebElement InvalidEmailAdress;
@@ -31,8 +31,8 @@ public class ForgotPasswordTest {
         SendInstrButton.click();
     }
 
-    public String setAccountLocked() {
-        String AccMessage = AccountLocked.getText();
+    public String resetEmailLink() {
+        String AccMessage = resetEmailLink.getText();
         return AccMessage;
     }
 

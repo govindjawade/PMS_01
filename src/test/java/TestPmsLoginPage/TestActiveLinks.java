@@ -23,7 +23,6 @@ public class TestActiveLinks {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
         driver.get("https://pms.hplbusiness.com/login");
     }
-
     @BeforeMethod
     public void loginAndValidateOtp() throws InterruptedException {
         LoginTest lg = new LoginTest(driver);
