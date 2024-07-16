@@ -4,21 +4,29 @@ import PMSLoginPages.LoginTest;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+
+import java.time.Duration;
 
 
 public class TestLogin {
     public WebDriver driver;
 
-    @Test(priority = 1)
-    public void loginTestValid() throws InterruptedException {
+    @BeforeClass
+    public void setUp() {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(40));
         driver.get("https://pms.hplbusiness.com/login");
-//
+    }
+
+    @Test(priority = 1)
+    public void loginTestValid() throws InterruptedException {
         LoginTest lg = new LoginTest(driver);
-        lg.setTxtUsername("rosas@yopmail.com");
-        lg.setTxtpassword("Rosas@123");
+        lg.setTxtUsername("raj@yopmail.com");
+        lg.setTxtpassword("Admin@321");
         Thread.sleep(4000);
         lg.Loginbuttonclick();
 
@@ -26,10 +34,6 @@ public class TestLogin {
 
     @Test(priority = 2)
     public void loginTestInvalidpassword() throws InterruptedException {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://pms.hplbusiness.com/login");
-
         LoginTest lg = new LoginTest(driver);
         lg.setTxtUsername("link1@yopmail.com");
         lg.setTxtpassword("Admin@12");
@@ -46,10 +50,6 @@ public class TestLogin {
 
     @Test(priority = 3)
     public void loginTestBlank() throws InterruptedException {
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://pms.hplbusiness.com/login");
-
         LoginTest lg = new LoginTest(driver);
         lg.setTxtUsername("");
         lg.setTxtpassword("");
@@ -57,26 +57,24 @@ public class TestLogin {
         lg.Loginbuttonclick();
 
     }
+
     @Test(priority = 4)
     public void invalidUser() throws InterruptedException {
-        driver=new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://pms.hplbusiness.com/login");
-
-        LoginTest lg=new LoginTest(driver);
+        LoginTest lg = new LoginTest(driver);
         lg.setTxtUsername("terence@gmail.com");
         lg.setTxtpassword("Admin@123");
         Thread.sleep(3000);
-
-        String Excepted="User detail does not exists in system";
-        String actual=lg.getToastmessage();
+        String Excepted = "User detail does not exists in system";
+        String actual = lg.getToastmessage();
         Thread.sleep(4000);
-
-        Assert.assertEquals(Excepted.trim(),actual.trim());
-
-
-
+        Assert.assertEquals(Excepted.trim(), actual.trim());
     }
 
+    @AfterClass
+    public void tearDown() {
+        if (driver != null) {
+            driver.quit();
+        }
+    }
 
 }
