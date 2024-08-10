@@ -3,7 +3,7 @@ package abstractClass;
 //An abstract class cannot be instantiated.(with help of overriding in child we can acces the abstract class or methods
 //An abstract class can have both abstract methods (without body) and concrete methods (with body).
 //A subclass of an abstract class must implement all abstract methods, or it must be declared abstract itself.
-//Abstract Methods:
+//Abstract Methods
 //Abstract methods are methods that are declared without an implementation (without braces, and followed by a semicolon).
 //abstract class mai (abstract class ka object nahi bana sakte but uske child ka
 // to banahi sakte hai and abstract method ka logic nahi likha ja sakta)>>>>>
