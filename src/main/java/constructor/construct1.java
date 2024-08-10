@@ -9,7 +9,6 @@ package constructor;
 class Demo {
     int x;
     int y;
-
     Demo() {
         System.out.println("consturctor DEMO executed");
         x = 5;
