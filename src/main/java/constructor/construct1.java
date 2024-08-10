@@ -11,7 +11,7 @@ class Demo {
     int y;
     Demo() {
         System.out.println("consturctor DEMO executed");
-        x = 5;
+        //x = 5;
         //y = 5;
     }
 
