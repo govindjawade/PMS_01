@@ -15,7 +15,6 @@ public class LoginTest {
 
     @FindBy(name = "usename")
     WebElement textusername;
-
     @FindBy(name = "password")
     WebElement textpassword;
 
