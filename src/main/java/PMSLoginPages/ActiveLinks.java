@@ -10,10 +10,8 @@ import java.util.List;
 
 public class ActiveLinks {
     public WebDriver driver;
-
     @FindBy(xpath = "//ul/li/a[contains(.,'Manage Global Master Files')]")
     WebElement globalmasterfiles;
-
     @FindBy(xpath = "//li/a[contains(.,'Entity Setup')]")
     WebElement entitySetUps;
 
