@@ -13,7 +13,6 @@ import java.util.List;
 
 public class OtpTest {
     public WebDriver driver;
-
     @FindBy(xpath = "//div[@class='recaptcha-checkbox-border']")
     WebElement checkbox;
     @FindBy(tagName = "button")
