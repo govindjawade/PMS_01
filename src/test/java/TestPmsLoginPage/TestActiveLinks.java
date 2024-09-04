@@ -21,9 +21,7 @@ public class TestActiveLinks {
         lg.setTxtUsername("raj@yopmail.com");
         lg.setTxtpassword("Admin@321");
         Thread.sleep(3000);
-
         lg.Loginbuttonclick();
-
         Thread.sleep(5000);
         String actual = driver.getCurrentUrl();
         String excepted = "https://pms.hplbusiness.com/otp";
