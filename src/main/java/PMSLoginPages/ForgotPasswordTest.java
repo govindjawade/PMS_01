@@ -12,7 +12,6 @@ public class ForgotPasswordTest {
 
     @FindBy(tagName = "button")
     WebElement SendInstrButton;
-
     @FindBy(id = "toast-container")
     WebElement resetEmailLink;
 
