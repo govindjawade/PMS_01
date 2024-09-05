@@ -14,7 +14,6 @@ public class ForgotPasswordTest {
     WebElement SendInstrButton;
     @FindBy(id = "toast-container")
     WebElement resetEmailLink;
-
     @FindBy(xpath = "//div[contains(text(),'Email address pattern is invalid.')]")
     WebElement InvalidEmailAdress;
 
