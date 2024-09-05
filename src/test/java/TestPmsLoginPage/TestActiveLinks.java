@@ -25,7 +25,6 @@ public class TestActiveLinks {
         Thread.sleep(5000);
         String actual = driver.getCurrentUrl();
         String excepted = "https://pms.hplbusiness.com/otp";
-
         Assert.assertEquals(excepted, actual);
         OtpTest ot = new OtpTest(driver);
         ot.setOtpText();
