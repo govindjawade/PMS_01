@@ -31,7 +31,6 @@ public class TestActiveLinks {
         Thread.sleep(3000);
         lg.Loginbuttonclick();
         Thread.sleep(5000);
-
         String actual = driver.getCurrentUrl();
         String expected = "https://pms.hplbusiness.com/otp";
         Assert.assertEquals(expected, actual);
